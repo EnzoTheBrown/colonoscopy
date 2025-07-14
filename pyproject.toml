@@ -1,0 +1,27 @@
+[project]
+name = "colonoscopy"
+version = "0.1.0"
+description = "Health-aggregation server written in Rust + Axum + PyO3"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.12"
+authors         = [{name = "Enzo Lebrun", email = "enzo@tantar.ai"}]
+license         = {text = "MIT"}
+dependencies = [
+    "ipython>=9.4.0",
+    "maturin[patchelf]>=1.9.1",
+    "pydantic>=2.11.7",
+    "maturin-import-hook>=0.2.0",
+]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+
+[build-system]
+requires = ["maturin>=1.8,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
